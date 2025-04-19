@@ -124,11 +124,13 @@ export default function JobsPage() {
 const [isOpen, setIsOpen] = useState(false);
   const [form, setForm] = useState({
     title: '',
-    createdBy: '',
-    createdDate: '',
-    organization: '',
+    department: '',
     location: '',
-    description: '',
+    skills: '',
+    matches: '',
+    status: '',
+    postdate: '',
+    actions: '',
   });
 
   const handleChange = (e) => {
@@ -147,9 +149,10 @@ const [isOpen, setIsOpen] = useState(false);
   const [jobs, setJobs] = useState([
     {
       id: "1",
-      title: "Machine Learning Engineer",
+      title: "Machine Learning Engineerr",
       department: "AI Research",
       location: "San Francisco, CA",
+      skills:"Python",
       matches: 12,
       status: "Active",
       postedDate: "2023-03-15",
@@ -159,6 +162,7 @@ const [isOpen, setIsOpen] = useState(false);
       title: "Data Scientist",
       department: "Data Analytics",
       location: "Remote",
+      skills:"Python",
       matches: 8,
       status: "Active",
       postedDate: "2023-03-20",
@@ -168,6 +172,7 @@ const [isOpen, setIsOpen] = useState(false);
       title: "Full Stack Developer",
       department: "Engineering",
       location: "New York, NY",
+      skills:"Python",
       matches: 15,
       status: "Active",
       postedDate: "2023-03-25",
@@ -177,6 +182,7 @@ const [isOpen, setIsOpen] = useState(false);
       title: "DevOps Engineer",
       department: "Infrastructure",
       location: "Seattle, WA",
+      skills:"Python",
       matches: 3,
       status: "Active",
       postedDate: "2023-03-18",
@@ -186,6 +192,7 @@ const [isOpen, setIsOpen] = useState(false);
       title: "AI Research Intern",
       department: "Research",
       location: "Boston, MA",
+      skills:"Python",
       matches: 6,
       status: "Active",
       postedDate: "2023-04-01",
@@ -195,6 +202,7 @@ const [isOpen, setIsOpen] = useState(false);
       title: "Senior Data Engineer",
       department: "Data Platform",
       location: "Austin, TX",
+      skills:"Python",
       matches: 9,
       status: "Active",
       postedDate: "2023-03-28",
@@ -231,10 +239,14 @@ const [isOpen, setIsOpen] = useState(false);
               <Filter className="mr-2 h-4 w-4" />
               Filter
             </Button>
-            <Button size="sm">
+            {/* <Button size="sm">
               <Plus className="mr-2 h-4 w-4" />
               Add Job
-            </Button>
+            </Button> */}
+            <Button size="sm" onClick={() => setIsOpen(true)}>
+        <Plus className="mr-2 h-4 w-4" />
+        Add Job
+      </Button>
           </div>
         </div>
       </CardHeader>
@@ -245,6 +257,7 @@ const [isOpen, setIsOpen] = useState(false);
               <TableHead>Title</TableHead>
               <TableHead>Department</TableHead>
               <TableHead>Location</TableHead>
+              <TableHead>Skills</TableHead>
               <TableHead>Matches</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Posted Date</TableHead>
@@ -257,6 +270,7 @@ const [isOpen, setIsOpen] = useState(false);
                 <TableCell className="font-medium">{job.title}</TableCell>
                 <TableCell>{job.department}</TableCell>
                 <TableCell>{job.location}</TableCell>
+                <TableCell>{job.skills}</TableCell>
                 <TableCell>
                   <div className="flex items-center">
                     <Users className="mr-1 h-3 w-3 text-muted-foreground" />
@@ -318,10 +332,7 @@ const [isOpen, setIsOpen] = useState(false);
 
     <div>
       {/* Trigger Button */}
-      <Button size="sm" onClick={() => setIsOpen(true)}>
-        <Plus className="mr-2 h-4 w-4" />
-        Add Job
-      </Button>
+    
 
       {/* Modal Overlay */}
       {isOpen && (
@@ -340,11 +351,14 @@ const [isOpen, setIsOpen] = useState(false);
 
             <form onSubmit={handleSubmit}>
               {[
-                { label: 'Job Title', name: 'title', type: 'text' },
-                { label: 'Created By', name: 'createdBy', type: 'text' },
-                { label: 'Created Date', name: 'createdDate', type: 'date' },
-                { label: 'Organization Name', name: 'organization', type: 'text' },
+                { label: 'Title', name: 'title', type: 'text' },
+                { label: 'Department', name: 'department', type: 'text' },
                 { label: 'Location', name: 'location', type: 'text' },
+                { label: 'Skills', name: 'skills', type: 'text' },
+                { label: 'Matches', name: 'matches', type: 'text' },
+                { label: 'Status', name: 'location', type: 'text' },
+                { label: 'Post Date', name: 'postdate', type: 'date' },
+                { label: 'Actions', name: 'actions', type: 'text' },
               ].map((field) => (
                 <div className="mb-4" key={field.name}>
                   <label className="block text-gray-700 font-medium mb-1">{field.label}</label>
@@ -359,17 +373,7 @@ const [isOpen, setIsOpen] = useState(false);
                 </div>
               ))}
 
-              <div className="mb-4">
-                <label className="block text-gray-700 font-medium mb-1">Job Description</label>
-                <textarea
-                  name="description"
-                  value={form.description}
-                  onChange={handleChange}
-                  rows="4"
-                  required
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
+          
 
               <div className="flex justify-end">
                 <button

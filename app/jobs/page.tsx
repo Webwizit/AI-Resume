@@ -1,101 +1,3 @@
-// 'use client';
-// import { useState } from 'react';
-
-// // import JobForm from '@/components/JobForm';
-// import JobTable from '@/app/jobsView/page';
-    
-
-// export default function JobsPage({ onAddJob }) {
-
-
-//   const [form, setForm] = useState({
-//     title: '',
-//     description: '',
-//     createdBy: '',
-//     createdDate: '',
-//     organization: '',
-//     location: '',
-//   });
-
-//   const handleChange = (e) => {
-//     setForm({ ...form, [e.target.name]: e.target.value });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     onAddJob({ ...form, id: Date.now() });
-//     setForm({
-//       title: '',
-//       description: '',
-//       createdBy: '',
-//       createdDate: '',
-//       organization: '',
-//       location: '',
-//     });
-//   };
-
-
-// // for jobs table 
-// const [jobs, setJobs] = useState([]);
-
-// const handleAddJob = (job) => {
-//   setJobs([job, ...jobs]);
-// };
-
-
-//   return (
-//     <div>
-//       <h1 className="mb-6 text-2xl font-bold text-gray-800">Jobs</h1>
-//       <div className="">
-//       <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-3xl mx-auto mb-8">
-//       <h2 className="text-xl font-bold mb-4">Post a New Job</h2>
-
-//       {[
-//         { label: 'Job Title', name: 'title', type: 'text' },
-//         { label: 'Created By', name: 'createdBy', type: 'text' },
-//         { label: 'Created Date', name: 'createdDate', type: 'date' },
-//         { label: 'Organization Name', name: 'organization', type: 'text' },
-//         { label: 'Location', name: 'location', type: 'text' },
-//       ].map((field) => (
-//         <div className="mb-4" key={field.name}>
-//           <label className="block font-medium mb-1">{field.label}</label>
-//           <input
-//             type={field.type}
-//             name={field.name}
-//             value={form[field.name]}
-//             onChange={handleChange}
-//             required
-//             className="w-full border border-gray-300 rounded px-3 py-2"
-//           />
-//         </div>
-//       ))}
-
-//       <div className="mb-4">
-//         <label className="block font-medium mb-1">Job Description</label>
-//         <textarea
-//           name="description"
-//           value={form.description}
-//           onChange={handleChange}
-//           rows="4"
-//           required
-//           className="w-full border border-gray-300 rounded px-3 py-2"
-//         />
-//       </div>
-
-//       <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-//         Add Job
-//       </button>
-//     </form>
-  
-//       </div>
-
-
-//       <JobTable jobs={jobs} />
-      
-//     </div>
-//   )
-// }
-
 
 
 
@@ -130,7 +32,7 @@ const [isOpen, setIsOpen] = useState(false);
     matches: '',
     status: '',
     postdate: '',
-    actions: '',
+    // actions: '',
   });
 
   const handleChange = (e) => {
@@ -261,7 +163,7 @@ const [isOpen, setIsOpen] = useState(false);
               <TableHead>Matches</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Posted Date</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
+              {/* <TableHead className="text-right">Actions</TableHead> */}
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -288,7 +190,7 @@ const [isOpen, setIsOpen] = useState(false);
                     <span>{job.postedDate}</span>
                   </div>
                 </TableCell>
-                <TableCell className="text-right">
+                {/* <TableCell className="text-right">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" size="sm">
@@ -320,7 +222,7 @@ const [isOpen, setIsOpen] = useState(false);
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
-                </TableCell>
+                </TableCell> */}
               </TableRow>
             ))}
           </TableBody>
@@ -358,7 +260,7 @@ const [isOpen, setIsOpen] = useState(false);
                 { label: 'Matches', name: 'matches', type: 'text' },
                 { label: 'Status', name: 'location', type: 'text' },
                 { label: 'Post Date', name: 'postdate', type: 'date' },
-                { label: 'Actions', name: 'actions', type: 'text' },
+                // { label: 'Actions', name: 'actions', type: 'text' },
               ].map((field) => (
                 <div className="mb-4" key={field.name}>
                   <label className="block text-gray-700 font-medium mb-1">{field.label}</label>

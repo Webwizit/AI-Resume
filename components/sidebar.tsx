@@ -44,7 +44,7 @@ const NavItem = ({ icon, label, href, hasDropdown = false, miniSidebar }: NavIte
       <Link
         href={href}
         className={cn(
-          "flex items-center gap-3 rounded-lg px-3 py-2 text-[#000000] transition-all hover:bg-blue-50 hover:text-blue-600",
+          "group flex items-center gap-3 rounded-lg px-3 py-2 text-white transition-all hover:bg-blue-50 hover:text-black",
           isActive && "bg-blue-50 text-blue-600",
           miniSidebar && "justify-center px-2",
         )}
@@ -77,7 +77,7 @@ export default function Sidebar({ open, miniSidebar }: SidebarProps) {
   return (
     <aside
       className={cn(
-        "fixed inset-y-0 left-0 z-50 transform border-r border-gray-200 bg-[#5a4e9f] transition-all duration-300 ease-in-out",
+        "fixed inset-y-0 left-0 z-50 transform border-r border-gray-200 bg-[#00549A] transition-all duration-300 ease-in-out",
         // On mobile: position as overlay
         isMobile ? "w-64" : miniSidebar ? "w-16" : "w-64",
         // On mobile: translate out of view when closed
@@ -116,13 +116,13 @@ export default function Sidebar({ open, miniSidebar }: SidebarProps) {
                 // hasDropdown
                 miniSidebar={miniSidebar}
               />
-              <NavItem
+              {/* <NavItem
                 icon={<LayoutGrid size={18} />}
                 label="Candidates"
                 href="/candidatelist"
                 // hasDropdown
                 miniSidebar={miniSidebar}
-              />
+              /> */}
               <NavItem  icon={<FileText size={18} />} label="Resume" href="/resume" miniSidebar={miniSidebar} />
               <NavItem icon={<Users size={18} />} label="Jobs" href="/jobs" miniSidebar={miniSidebar} />
               <NavItem
@@ -132,13 +132,13 @@ export default function Sidebar({ open, miniSidebar }: SidebarProps) {
                 // hasDropdown
                 miniSidebar={miniSidebar}
               />
-               <NavItem
+               {/* <NavItem
                 icon={<Settings size={18} />}
                 label="Settings"
                 href="/settings"
                 // hasDropdown
                 miniSidebar={miniSidebar}
-              />
+              /> */}
             </ul>
           </nav>
 {/* 

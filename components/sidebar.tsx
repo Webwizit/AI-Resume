@@ -116,13 +116,13 @@ export default function Sidebar({ open, miniSidebar }: SidebarProps) {
                 // hasDropdown
                 miniSidebar={miniSidebar}
               />
-              <NavItem
+              {/* <NavItem
                 icon={<LayoutGrid size={18} />}
                 label="Candidates"
                 href="/candidatelist"
                 // hasDropdown
                 miniSidebar={miniSidebar}
-              />
+              /> */}
               <NavItem  icon={<FileText size={18} />} label="Resume" href="/resume" miniSidebar={miniSidebar} />
               <NavItem icon={<Users size={18} />} label="Jobs" href="/jobs" miniSidebar={miniSidebar} />
               <NavItem
@@ -132,13 +132,13 @@ export default function Sidebar({ open, miniSidebar }: SidebarProps) {
                 // hasDropdown
                 miniSidebar={miniSidebar}
               />
-               <NavItem
+               {/* <NavItem
                 icon={<Settings size={18} />}
                 label="Settings"
                 href="/settings"
                 // hasDropdown
                 miniSidebar={miniSidebar}
-              />
+              /> */}
             </ul>
           </nav>
 {/* 

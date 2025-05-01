@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { FileText, Star, Database, Twitter, Facebook, Instagram, Github, Menu, X } from "lucide-react"
-import "./globals.css"
+
 export default function Homes() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false) //for scroll
@@ -345,6 +345,24 @@ export default function Homes() {
         © Copyright 2022, All Rights Reserved by Webwiz
       </div>
     </footer>
+
+    <style jsx>{`
+        .container {
+          padding: 20px;
+          background-color: #f9f9f9;
+          text-align: center;
+        }
+
+        h1 {
+          color: #0070f3;
+        }
+
+        p {
+          color: #333;
+        }
+      `}</style>
     </div>
+
+    
   )
 }

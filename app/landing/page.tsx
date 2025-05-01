@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { FileText, Star, Database, Twitter, Facebook, Instagram, Github, Menu, X } from "lucide-react"
-
+import "./globals.css"
 export default function Homes() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false) //for scroll
@@ -37,17 +37,18 @@ export default function Homes() {
           <Image src="/images/logo-white.png" alt="AI Resume Logo" style={{height:"30px", width:"auto"}} width={32} height={32} />
           </Link>
           <nav className="hidden md:flex space-x-8">
-           
-            <Link href="#" className="text-white hover:text-purple-200 flex items-center">
+            <Link href="#" className="text-white hover:text-purple-200">
+              Products
+            </Link>
+            <Link href="#" className="text-white hover:text-purple-200">
+              Features
+            </Link>
+            <Link href="#" className="text-white hover:text-purple-200">
               Pricing
             </Link>
-            <Link href="#" className="text-white hover:text-purple-200 flex items-center">
+            <Link href="#" className="text-white hover:text-purple-200">
               Support
             </Link>
-            <Link href="#" className="border border-[#B602DE] text-white bg-transparent hover:bg-transparent hover:text-[#B602DE] font-semibold py-2 px-4 rounded-full transition duration-300">
-            Login
-            </Link>
-           
           </nav>
           <Button className="md:hidden bg-purple-700 hover:bg-purple-600" onClick={toggleMenu}>
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
